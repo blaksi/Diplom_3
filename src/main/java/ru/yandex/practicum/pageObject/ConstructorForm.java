@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class ConstructorForm extends MainPage {
@@ -25,12 +24,6 @@ public class ConstructorForm extends MainPage {
         return driver.findElement(title).getText();
     }
 
-    @Step("Получаем текущий активный таб")
-    public String getCurrentTab() {
-        return driver.findElement(currentTab).getText();
-    }
-
-
     @Step("Открываем вкладку 'Булки'")
     public void clickBuns() {
         driver.findElement(bunsTab).click();
@@ -43,7 +36,7 @@ public class ConstructorForm extends MainPage {
     }
     @Step("wait")
     public boolean wait(String name){
-       return new WebDriverWait(driver, Duration.ofSeconds(19))
+       return new WebDriverWait(driver, Duration.ofSeconds(9))
                 .until(ExpectedConditions.textToBe(currentTab,name));
     }
 
